@@ -29,6 +29,7 @@
             });
         });
     </script>
+
 </head>
 <body>
     <div class="container py-4">
@@ -39,7 +40,7 @@
             <div class="card-body">
                 @using (Html.BeginForm("Index", "Home", FormMethod.Post))
                 {
-                 @Html.ActionLink("CreateEmployee", "CreateEmployee")   
+                    @Html.ActionLink("CreateEmployee", "CreateEmployee")
                     <button type="submit" value="Delete" class="btn btn-sm btn-danger rounded-0" onclick="return confirm('Are you sure?')"><i class="fa fa-trash-o"></i> Delete</button>
                     <br /><br />
                     <table id="DataTable" style="width:100%;" class="table table-bordered">
@@ -65,6 +66,7 @@
                                     <td>@employee.Email</td>
                                     <td>@employee.ContactNo</td>
                                     <td>@employee.Address</td>
+                                    <td>@Html.ActionLink("Edit","Edit",new { id=employee.UserId})</td>
                                 </tr>
                             }
                         </tbody>
