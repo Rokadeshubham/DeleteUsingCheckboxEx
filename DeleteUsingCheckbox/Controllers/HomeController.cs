@@ -28,5 +28,18 @@ namespace DeleteUsingCheckbox.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult CreateEmployee()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateEmployee(Employee emp)
+        {
+            entities.Employees.Add(emp);
+            entities.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }
